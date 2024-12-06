@@ -16,7 +16,8 @@
 </head>
 <body>
 <%
-    List<Course> courses = CourseRepo.getAllCourses();
+    CourseRepo courseRepo = new CourseRepo();
+    List<Course> courses= courseRepo.findAll();
 %>
 <table class="table">
     <a href="addCourse.jsp" class="btn btn-dark">Add course</a>

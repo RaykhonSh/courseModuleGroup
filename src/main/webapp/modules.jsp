@@ -17,7 +17,8 @@
 </head>
 <body>
 <%
-    List<Module> modules = ModuleRepo.getModules();
+    ModuleRepo moduleRepo = new ModuleRepo();
+    List<Module> modules = moduleRepo.findAll();
     int courseId = Integer.parseInt(request.getParameter("courseId"));
     List<Module> moduleList = modules.stream().filter(module -> module.getCourse().getId().equals(courseId)).toList();
 %>

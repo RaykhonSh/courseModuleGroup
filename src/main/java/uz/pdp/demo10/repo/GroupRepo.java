@@ -7,16 +7,16 @@ import java.util.List;
 
 import static uz.pdp.demo10.MyListener.emf;
 
-public class GroupRepo {
-    public static List<Groups> getGroupsList() {
-        try (
-                EntityManager entityManager = emf.createEntityManager();
-                ){
-            return entityManager.createQuery("from Groups ",Groups.class).getResultList();
-        } catch (Exception e) {
-            throw new RuntimeException(e);
-        }
-    }
+public class GroupRepo extends BaseRepo<Groups>{
+//    public static List<Groups> getGroupsList() {
+//        try (
+//                EntityManager entityManager = emf.createEntityManager();
+//                ){
+//            return entityManager.createQuery("from Groups ",Groups.class).getResultList();
+//        } catch (Exception e) {
+//            throw new RuntimeException(e);
+//        }
+//    }
 
     public static Groups findById(int groupId) {
         try (

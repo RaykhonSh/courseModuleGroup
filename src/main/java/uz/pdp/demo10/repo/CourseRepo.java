@@ -7,14 +7,14 @@ import java.util.List;
 
 import static uz.pdp.demo10.MyListener.emf;
 
-public class CourseRepo {
-    public static List<Course>  getAllCourses() {
-        try(EntityManager em = emf.createEntityManager()) {
-            return em.createQuery("from Course", Course.class).getResultList();
-        } catch (Exception e) {
-            throw new RuntimeException(e);
-        }
-    }
+public class CourseRepo extends BaseRepo<Course> {
+//    public static List<Course>  getAllCourses() {
+//        try(EntityManager em = emf.createEntityManager()) {
+//            return em.createQuery("from Course", Course.class).getResultList();
+//        } catch (Exception e) {
+//            throw new RuntimeException(e);
+//        }
+//    }
 
     public static Course getById(int courseId) {
         try(EntityManager em = emf.createEntityManager()) {

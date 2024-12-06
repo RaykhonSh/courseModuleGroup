@@ -4,22 +4,18 @@ import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import uz.pdp.demo10.repo.BaseEntity;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-public class Module {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+public class Module extends BaseEntity {
+
     private String name;
 
     @ManyToOne
     private Course course;
 
-    public Module(String name, Course course) {
-        this.name = name;
-        this.course = course;
-    }
+    
 }

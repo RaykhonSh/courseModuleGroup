@@ -19,8 +19,9 @@
 <body>
 <%
   int courseId = Integer.parseInt(request.getParameter("courseId"));
-  List<Course> courses = CourseRepo.getAllCourses();
-  String id = request.getParameter("moduleId");
+    CourseRepo courseRepo=new CourseRepo();
+    List<Course> courses = courseRepo.findAll();
+    String id = request.getParameter("moduleId");
   Module module=null;
   if (id!=null){
     int moduleId = Integer.parseInt(id);

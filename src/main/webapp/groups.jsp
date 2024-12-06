@@ -20,7 +20,8 @@
 <%
     int moduleId = Integer.parseInt(request.getParameter("moduleId"));
     Module module = ModuleRepo.getById(moduleId);
-    List<Groups> groups=GroupRepo.getGroupsList();
+    GroupRepo groupRepo = new GroupRepo();
+    List<Groups> groups = groupRepo.findAll();
     List<Groups> groupsList = groups.stream().filter(groups1 -> groups1.getModule().getId().equals(moduleId)).toList();
 
 %>

@@ -18,7 +18,8 @@
 </head>
 <body>
 <%
-  List<Module> modules = ModuleRepo.getModules();
+    ModuleRepo moduleRepo = new ModuleRepo();
+    List<Module> modules = moduleRepo.findAll();
   int moduleId = Integer.parseInt(request.getParameter("moduleId"));
   String id = request.getParameter("groupId");
   Groups group=null;

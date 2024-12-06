@@ -4,21 +4,15 @@ import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import uz.pdp.demo10.repo.BaseEntity;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-public class Student {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+public class Student extends BaseEntity {
     private String name;
     @ManyToOne
     private Groups groups;
 
-    public Student(String name, Groups groups) {
-        this.name = name;
-        this.groups = groups;
-    }
 }
